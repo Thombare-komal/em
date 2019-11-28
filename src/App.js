@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Layouts from './Components/';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import AdminLayout from '../src/layouts/Admin';
+import Login from '../src/layouts/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Layouts/>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/admin" render={props => <AdminLayout {...props} />} />
+        <Route path="/login" render={props => <Login {...props} />} />
+        <Redirect from="/" to="/admin/dashboard" />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
