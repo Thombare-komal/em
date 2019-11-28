@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import banner from '../../assets/banner.jpg';
+import ComponentName from '../../randomFunctions/CoponentName';
 class Login extends Component {
 
     constructor(props) {
@@ -10,21 +11,16 @@ class Login extends Component {
     }
 
     render() {
-        const headerName = this.props.location.pathname.split("/");
         return (
             <div className="content">
                 <Row>
                     <Col md={10}>
-                        <Row>
-                            <Col md={4} >
-                                <p className="component-header"> {headerName[2]} </p>
-                            </Col>
-                        </Row>
-                        <Row>
+                        <ComponentName {...this.props}></ComponentName>
+                        < Row >
                             <Col>
                                 <img className="col d-flex align-items-center justify-content-center" alt={banner} src={banner} />
                             </Col>
-                        </Row>
+                        </Row >
 
                         <Row>
                             <Col md={{ offset: 2, span: 8 }}>
@@ -42,10 +38,11 @@ class Login extends Component {
                             </Col>
                         </Row>
                     </Col>
-                </Row>
+                </Row>);
             </div >
         )
     }
 }
+
 
 export default Login;

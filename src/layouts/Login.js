@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AdminNavbar from '../components/Navbars/AdminNavbar';
 import Sidebar from '../components/Sidebar/Sidebar';
 import routes from '../routes';
 
@@ -19,7 +18,7 @@ class Login extends Component {
                 return (
                     <Route path={prop.layout + prop.path}
                         render={props => (
-                            <prop.component {...props} />
+                            <prop.component {...props} componentName={prop.name} />
                         )}
                         key={key}
                     />

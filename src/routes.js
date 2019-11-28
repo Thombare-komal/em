@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Dashboard from './views/Dashbord/Dashboard';
+import Dashboard from './views/Dashboard';
+import GeneralLedger from './views/GeneralLedger';
+import BusinessNetwork from './views/BusinessNetwork';
 import Login from './components/login/Login';
 
 const dashboardRoutes = [
@@ -14,12 +16,14 @@ const dashboardRoutes = [
     icon: "inr",
     name: "General Ledger",
     path: "/generalledger",
+    component: GeneralLedger,
     layout: '/admin'
   },
   {
     icon: "globe",
     name: " Business Network",
     path: "/businessnetwork",
+    component: BusinessNetwork,
     layout: '/admin'
   },
   {

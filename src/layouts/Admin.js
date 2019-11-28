@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AdminNavbar from '../components/Navbars/AdminNavbar';
 import Sidebar from '../components/Sidebar/Sidebar';
 import routes from '../routes';
 
@@ -13,13 +12,12 @@ class Admin extends Component {
 
     getRoutes = routes => {
         return routes.map((prop, key) => {
-            console.log("prop.layout", prop.layout);
 
             if (prop.layout === "/admin") {
                 return (
                     <Route path={prop.layout + prop.path}
                         render={props => (
-                            <prop.component {...props} />
+                            <prop.component {...props} componentName={prop.name} />
                         )}
                         key={key}
                     />
@@ -30,8 +28,6 @@ class Admin extends Component {
             }
         })
     }
-
-
 
     render() {
         return (
