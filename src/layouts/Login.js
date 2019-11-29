@@ -12,8 +12,6 @@ class Login extends Component {
 
     getRoutes = routes => {
         return routes.map((prop, key) => {
-            console.log("prop.layout", prop.layout);
-
             if (prop.layout === "/login") {
                 return (
                     <Route path={prop.layout + prop.path}
@@ -35,7 +33,7 @@ class Login extends Component {
     render() {
         return (
             <div className="wrapper">
-                <Sidebar {...this.props} routes={routes} />
+                {/* <Sidebar {...this.props} routes={routes} /> */}
                 <div id="main-panel" className="main-panel" ref="mainPanel">
                     <Switch>{this.getRoutes(routes)}</Switch>
                 </div>

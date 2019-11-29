@@ -159,10 +159,11 @@ body,
 }
 
 .sidebar .logo {
-    padding: 10px 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    z-index: 4; 
+  text-align: center;
+  margin-top: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 4; 
 }
 
 .sidebar .logo p {
@@ -243,3 +244,12 @@ body,
     font-size: 18px;
 }
 
+
+.header{
+  font-size: 38px;
+  color: #42d0ed;
+}
+
+.main-sub-content{
+  margin-top: 10px;
+}

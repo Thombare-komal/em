@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
+import { Navbar } from 'react-bootstrap';
 const FontAwesome = require("react-fontawesome");
 
 class Sidebar extends Component {
@@ -32,13 +33,7 @@ class Sidebar extends Component {
                             {/* <img src={logo} alt="logo_image" /> */}
                         </div>
                     </a>
-
-                    <a
-                        href="https://www.creative-tim.com?ref=lbd-sidebar"
-                        className="simple-text logo-normal"
-                    >
-                        E-MONEY
-                    </a>
+                    <NavLink to='/admin/dashboard' className="header" > EMONEY </NavLink>
                 </div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">

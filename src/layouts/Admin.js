@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Sidebar from '../components/Sidebar/Sidebar';
+import AdminNavbar from '../components/Navbars/AdminNavbar';
 import routes from '../routes';
 
 class Admin extends Component {
@@ -34,6 +35,7 @@ class Admin extends Component {
             <div className="wrapper">
                 <Sidebar {...this.props} routes={routes} />
                 <div id="main-panel" className="main-panel" ref="mainPanel">
+                    <AdminNavbar></AdminNavbar>
                     <Switch>{this.getRoutes(routes)}</Switch>
                 </div>
             </div>
