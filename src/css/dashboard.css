@@ -242,6 +242,7 @@ body,
 .component-header{
     text-transform: uppercase;
     font-size: 18px;
+    text-underline-position: below;
 }
 
 
@@ -252,4 +253,13 @@ body,
 
 .main-sub-content{
   margin-top: 10px;
+}
+
+.create-invoice-form-row {
+  padding: 10px;
+}
+
+.create-invoice-form-row Form.Label {
+  color: red;
+  background-color: #1DC7EA;
 }

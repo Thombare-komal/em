@@ -3,6 +3,7 @@ import {
     Row, Col, Button
 } from 'react-bootstrap';
 import ComponentName from '../randomFunctions/CoponentName';
+import CreateInvoice from '../components/GeneralLedger/CreateInovice';
 
 class GeneralLedger extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class GeneralLedger extends Component {
                 <Row>
                     <Col md={10}>
                         <ComponentName {...this.props} />
+                        <CreateInvoice />
                     </Col>
                 </Row>
             </div>
