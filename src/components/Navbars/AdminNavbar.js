@@ -4,6 +4,10 @@ import AdminNavbarLinks from '../Navbars/AdminNavbarLinks';
 import './Header.css';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
 
     render() {
         return (
@@ -11,7 +15,7 @@ class Header extends Component {
                 <Navbar bg="light" expand="lg">
                     {/* <Navbar.Brand href="#home"><p className="header">EMONEY</p></Navbar.Brand> */}
                     <Navbar.Collapse>
-                        <AdminNavbarLinks />
+                        <AdminNavbarLinks {...this.props} />
                     </Navbar.Collapse>
                 </Navbar>
             </div>

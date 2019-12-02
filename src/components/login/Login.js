@@ -42,7 +42,11 @@ class Login extends Component {
     handleSubmit(event) {
         event.preventDefault()
         if (this.state.email.length > 0 && this.state.password.length > 0) {
-            console.log("LOGIN DONE", this.state);
+            const data = {
+                userData: this.state.email,
+                isLoggedIn: true
+            }
+            localStorage.setItem("user", JSON.stringify(data))
             this.props.history.push("/admin/dashboard", this.state);
         } else {
             console.log("WRONG");

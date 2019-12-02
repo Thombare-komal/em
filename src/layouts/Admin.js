@@ -30,12 +30,16 @@ class Admin extends Component {
         })
     }
 
+    componentDidMount() {
+        this.user = localStorage.getItem("user") ? JSON.stringify(localStorage.getItem("user")).userData : ''
+    }
+
     render() {
         return (
             <div className="wrapper">
                 <Sidebar {...this.props} routes={routes} />
                 <div id="main-panel" className="main-panel" ref="mainPanel">
-                    <AdminNavbar></AdminNavbar>
+                    <AdminNavbar {...this.props}></AdminNavbar>
                     <Switch>{this.getRoutes(routes)}</Switch>
                 </div>
             </div>
