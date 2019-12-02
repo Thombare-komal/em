@@ -43,7 +43,7 @@ class Login extends Component {
         event.preventDefault()
         if (this.state.email.length > 0 && this.state.password.length > 0) {
             console.log("LOGIN DONE", this.state);
-            this.props.history.push("/admin/dashboard");
+            this.props.history.push("/admin/dashboard", this.state);
         } else {
             console.log("WRONG");
         }
