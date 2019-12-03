@@ -78,7 +78,7 @@ body,
     top: 0;
     bottom: 0;
     left: 0;
-    width: 200px;
+    width: 20%;
     display: block;
     z-index: 1;
     color: rgb(88, 154, 240);
@@ -111,6 +111,11 @@ body,
 .sidebar .nav {
     margin-top: 50px; 
 }
+
+/* .sidenav-menu{
+  margin-top: -50px;
+  background-color: blue;
+} */
 
 .sidebar .nav li > a {
     color:#000000;
@@ -220,10 +225,10 @@ body,
 }
 
 .main-panel {
-    background: rgba(203, 203, 210, 0.15);
+    background: #FFFFFF;
     position: relative;
     float: right;
-    width: calc(100% - 260px);
+    width: calc(100% - 260px );
 }
 
 .main-panel > .content {
@@ -243,6 +248,13 @@ body,
     text-transform: uppercase;
     font-size: 18px;
     text-underline-position: below;
+}
+
+.login-user{
+  background-color: #01b65b;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 10px;
 }
 
 
@@ -266,54 +278,58 @@ body,
 
 .sub-header {
   color: #01b65b;
-  text-transform: uppercase;
 }
 
 .glyphicon {
+  font-size: 20px;
   margin-top: -8px;
-  font-size: 32px;
 }
 
-
-/* background-color:  #01b65b;
-height: 70px;
-width: 70px;
-border-radius: 50%;
-text-align: center; */
-
-
-
 .arrowRight {
-background-color:  #01b65b;
-height: 70px;
-width: 70px;
-border-radius: 50%;
-float: right;
+  background-color:  #01b65b;
+  padding: 7px 10px  7px 10px;
+  border-radius: 50%;
+  float: right;
+  color: #FFFFFF;
 }
 
 .arrowLeft {
-background-color:  #01b65b;
-height: 70px;
-width: 70px;
-border-radius: 50%;
+  background-color:  #01b65b;
+  padding: 7px 10px  7px 10px;
+  border-radius: 50%;
   float: left;
+  color: #FFFFFF;
 }
 
 .arrow:hover {
   background-color:  #024d27;
 }
 
-.glyphicon-center{
-  color: #FFFFFF;
-  padding: 13px;
-  margin-top: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .create-invoice-div {
   margin-top: 30px;
 }
 
+label{
+  padding-top: 1.5rem ;
+}
+
+.form-control{
+  background-color: rgb(245, 248, 250);
+  color: rgb(143, 153, 167);
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  padding: 2.5rem;
+}
+
+.btn-block {
+  border-radius: 50px;
+  padding: 10px;
+  background-color: rgb(245, 248, 250);
+  color: rgb(143, 153, 167);
+  border: none;
+}
+
+.glyphicon-arrow-right, .glyphicon-arrow-left {
+  margin-top: 0px;
+} 

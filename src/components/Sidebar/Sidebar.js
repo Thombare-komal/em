@@ -43,7 +43,7 @@ class Sidebar extends Component {
                                         <li className={prop.upgrade ? "actiive active-pro" : this.activeRoute(prop.layout + prop.path)} key={key} >
                                             <NavLink to={prop.layout + prop.path} className="nav-link" activeClassName="active">
                                                 <span>
-                                                    <i className={prop.icon} > </i><b>{prop.name}</b>
+                                                    <i className={prop.icon} > </i><span className="sidenav-menu">{prop.name}</span>
                                                 </span>
                                             </NavLink>
                                         </li>

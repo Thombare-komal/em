@@ -12,7 +12,7 @@ class Header extends Component {
     render() {
         return (
             <div className="float-right">
-                <Navbar bg="light" expand="lg">
+                <Navbar expand="lg">
                     {/* <Navbar.Brand href="#home"><p className="header">EMONEY</p></Navbar.Brand> */}
                     <Navbar.Collapse>
                         <AdminNavbarLinks {...this.props} />

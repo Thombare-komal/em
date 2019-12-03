@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import banner from '../assets/banner.jpg';
 import ComponentName from '../randomFunctions/CoponentName';
-var FontAwesome = require('react-fontawesome');
+import FontAwesome from 'react-fontawesome';
 
 class Dashboard extends Component {
     constructor(props) {

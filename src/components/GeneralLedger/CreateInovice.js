@@ -10,18 +10,6 @@ function mapStateToProps(dispatch) {
     }
 }
 
-let arrowRight = (
-    <div className="arrowRight arrow">
-        <i className="glyphicon glyphicon-arrow-right glyphicon-center"></i>
-    </div>
-);
-
-let arrowLeft = (
-    <div className="arrowLeft arrow">
-        <i className="glyphicon glyphicon-arrow-left glyphicon-center"></i>
-    </div>
-);
-
 class CreateInovice extends Component {
     constructor(props) {
         super(props);
@@ -30,10 +18,7 @@ class CreateInovice extends Component {
             invoiceTotalAmount: "",
             invoiceDate: ""
         }
-
         this.invoiceData = this.invoiceData.bind(this);
-        this.nextClick = this.nextClick.bind(this);
-        this.backClick = this.backClick.bind(this);
     }
 
     invoiceData(event) {
@@ -45,24 +30,17 @@ class CreateInovice extends Component {
         this.props.createInvoiceSubmit(this.state);
     }
 
-
-
-    nextClick() {
-        console.log("next click", this.state, this.props);
-    }
-
-    backClick() {
-        console.log("back click");
-
-    }
-
-
     render() {
+        { this.props.sendData(this.state); }
         return (
             <div>
-                <h3>Create Invoice</h3>
-                <p className="sub-header">Capture Invoice Data</p>
+
                 <Form>
+                    <Col md={{ offset: 1 }}>
+                        <h5>Create Invoice</h5>
+                        <span className="sub-header">Capture Invoice Data</span>
+                    </Col>
+
                     <Row className="create-invoice-form-row">
                         <Col md={{ offset: 1, span: 3 }}>
                             <Form.Label >Invoice Number</Form.Label>
@@ -92,29 +70,21 @@ class CreateInovice extends Component {
 
                 </Form>
                 <Form>
-                    <p className="sub-header">Add Attachments</p>
+                    <Col md={{ offset: 1 }}>
+                        <p className="sub-header">Add Attachments</p>
+                    </Col>
                     <Row className="create-invoice-form-row">
                         <Col md={{ offset: 1, span: 7 }}>
-                            <Form.Control type="file" placeholder="Select Invoice File to Upload" />
+                            <Form.Control type="file" className="inputfile" placeholder="Select Invoice File to Upload" />
                         </Col>
                         <Col md={4} >
-                            <Button variant="success" size="block lg">
+                            <Button variant="light" size="block lg">
                                 Upload
                             </Button>
                         </Col>
-
                     </Row>
                 </Form>
-
-                <div className="create-invoice-div">
-                    <div onClick={this.backClick}>
-                        {arrowLeft}
-                    </div>
-                    <div onClick={this.nextClick}>
-                        {arrowRight}
-                    </div>
-                </div>
-            </div>
+            </div >
         );
     }
 }

@@ -16,8 +16,11 @@ class AdminNavbarLinks extends Component {
 
     render() {
         return (
-            <div >
-                <button onClick={this.logout} >Log out </button>
+            <div className="login-user" title="user">
+                {/* <button onClick={this.logout} >Log out </button>
+                 */}
+
+                <i className="glyphicon glyphicon-user"></i>
             </div>
         );
     }
