@@ -68,9 +68,9 @@ body,
     background-color: white; }
   
   a {
-    color: #1DC7EA; }
+    color: #000000; }
     a:hover, a:focus {
-      color: #42d0ed;
+      color: #01b65b;
       text-decoration: none; }
 
 .sidebar {
@@ -113,7 +113,7 @@ body,
 }
 
 .sidebar .nav li > a {
-    color: rgb(94, 152, 245);
+    color:#000000;
     margin: 5px 30px;
     opacity: .86;
     border-radius: 4px; 
@@ -128,7 +128,7 @@ body,
 }
 
 .sidebar .nav li.active > a {
-    color:#000000;
+    color:#01b65b;
     opacity: 1;
     background: rgba(255, 255, 255, 0.23);
 }
@@ -263,3 +263,57 @@ body,
   color: red;
   background-color: #1DC7EA;
 }
+
+.sub-header {
+  color: #01b65b;
+  text-transform: uppercase;
+}
+
+.glyphicon {
+  margin-top: -8px;
+  font-size: 32px;
+}
+
+
+/* background-color:  #01b65b;
+height: 70px;
+width: 70px;
+border-radius: 50%;
+text-align: center; */
+
+
+
+.arrowRight {
+background-color:  #01b65b;
+height: 70px;
+width: 70px;
+border-radius: 50%;
+float: right;
+}
+
+.arrowLeft {
+background-color:  #01b65b;
+height: 70px;
+width: 70px;
+border-radius: 50%;
+  float: left;
+}
+
+.arrow:hover {
+  background-color:  #024d27;
+}
+
+.glyphicon-center{
+  color: #FFFFFF;
+  padding: 13px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.create-invoice-div {
+  margin-top: 30px;
+}
+

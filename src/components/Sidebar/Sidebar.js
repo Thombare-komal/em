@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import { Navbar } from 'react-bootstrap';
-const FontAwesome = require("react-fontawesome");
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class Sidebar extends Component {
 
@@ -40,11 +41,10 @@ class Sidebar extends Component {
                                 if (!prop.redirect)
                                     return (
                                         <li className={prop.upgrade ? "actiive active-pro" : this.activeRoute(prop.layout + prop.path)} key={key} >
-                                            <NavLink to={prop.layout + prop.path}
-                                                className="nav-link"
-                                                activeClassName="active">
-                                                {/* <i className={prop.icon} /> */}
-                                                <p>{prop.name}</p>
+                                            <NavLink to={prop.layout + prop.path} className="nav-link" activeClassName="active">
+                                                <span>
+                                                    <i className={prop.icon} > </i><b>{prop.name}</b>
+                                                </span>
                                             </NavLink>
                                         </li>
                                     );
@@ -53,7 +53,7 @@ class Sidebar extends Component {
                         }
                     </ul>
                 </div>
-            </div>
+            </div >
         )
     }
 }

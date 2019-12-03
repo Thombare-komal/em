@@ -29,7 +29,7 @@ class Dashboard extends Component {
                         <div className="main-sub-content">
                             <Row>
                                 <Col md={4} >
-                                    <p> Business Overview </p>
+                                    <p className="sub-header"> Business Overview </p>
                                 </Col>
                             </Row>
 
@@ -47,7 +47,9 @@ class Dashboard extends Component {
                                 <Col md={3} ><p> Due </p> <p> < FontAwesome name="inr" /> 4, 500.00 </p> </Col>
                             </Row>
                             <Row>
-                                <Col md={12} ><p> My Actions </p> </Col>
+                                <Col md={12} >
+                                    <p className="sub-header"> My Actions </p>
+                                </Col>
                             </Row>
                             <Row>
                                 <Col>

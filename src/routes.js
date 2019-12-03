@@ -4,48 +4,49 @@ import GeneralLedger from './views/GeneralLedger';
 import BusinessNetwork from './views/BusinessNetwork';
 import Login from './components/login/Login';
 
+
 const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: "fa fa-address-card",
+    icon: "glyphicon glyphicon-dashboard",
     component: Dashboard,
     layout: '/admin'
   },
   {
-    icon: "inr",
+    icon: "glyphicon glyphicon-usd",
     name: "General Ledger",
     path: "/generalledger",
     component: GeneralLedger,
     layout: '/admin'
   },
   {
-    icon: "globe",
+    icon: "glyphicon glyphicon-globe",
     name: " Business Network",
     path: "/businessnetwork",
     component: BusinessNetwork,
     layout: '/admin'
   },
   {
-    icon: "bars",
+    icon: "glyphicon glyphicon-list-alt",
     name: "Transactions",
     path: "/transactions",
     layout: '/admin'
   },
   {
-    icon: "bell-o",
+    icon: "glyphicon glyphicon-bell",
     name: "Notifications",
     path: "/notifications",
     layout: '/admin'
   },
   {
-    icon: "cog",
+    icon: "glyphicon glyphicon-cog",
     name: "Settings",
     path: "/settings",
     layout: '/admin'
   },
   {
-    icon: "minus-circle",
+    icon: "glyphicon glyphicon-minus-sign",
     name: "Logout",
     path: "/logout",
     component: Login,
