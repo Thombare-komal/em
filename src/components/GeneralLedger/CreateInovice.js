@@ -10,14 +10,17 @@ function mapStateToProps(dispatch) {
     }
 }
 
+let arrowRight = (
+    <div className="arrowRight arrow">
+        <i className="glyphicon glyphicon-arrow-right glyphicon-center"></i>
+    </div>
+);
 
-let arrowRight = <div className="arrowRight arrow">
-    <i className="glyphicon glyphicon-arrow-right glyphicon-center"></i>
-</div>
-
-let arrowLeft = <div className="arrowLeft arrow">
-    <i className="glyphicon glyphicon-arrow-left glyphicon-center"></i>
-</div>
+let arrowLeft = (
+    <div className="arrowLeft arrow">
+        <i className="glyphicon glyphicon-arrow-left glyphicon-center"></i>
+    </div>
+);
 
 class CreateInovice extends Component {
     constructor(props) {
