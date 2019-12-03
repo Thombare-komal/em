@@ -29,6 +29,7 @@ class CreateInovice extends Component {
   backClick() {
     console.log("back click");
   }
+
   render() {
     return (
       <div>
