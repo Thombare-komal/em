@@ -1,19 +1,20 @@
-import { LOGIN_SUBMIT, CREATE_INVOICE_SUBMIT } from '../constants/action-types';
+import { LOGIN_SUBMIT, CREATE_INVOICE_SUBMIT } from "../constants/action-types";
 const initialState = {
-    loginData: [],
-    createInvoiceData: []
+  loginData: [],
+  createInvoiceData: []
 };
 
 function rootReducer(state = initialState, action) {
+  if (action.type === LOGIN_SUBMIT) {
+    state.loginData.push(action.payload);
+  }
 
-    if (action.type === LOGIN_SUBMIT) {
-        state.loginData.push(action.payload)
-    }
+  if (action.type === CREATE_INVOICE_SUBMIT) {
+    state.createInvoiceData.push(action.payload);
+  }
+  console.log("STate", state);
 
-    if (action.type === CREATE_INVOICE_SUBMIT) {
-        state.createInvoiceData.push(action.payload)
-    }
-    return state;
-};
+  return state;
+}
 
 export default rootReducer;
