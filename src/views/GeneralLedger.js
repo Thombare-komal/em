@@ -21,8 +21,6 @@ class GeneralLedger extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nextFormClicked: false,
-      backFormClicked: true,
       createInvoiceData: "",
       count: 0
     };
@@ -34,28 +32,20 @@ class GeneralLedger extends Component {
 
   nextClick() {
     this.setState({
-      nextFormClicked: true,
-      backFormClicked: false,
       count: this.state.count + 1
     });
   }
 
   backClick() {
     this.setState({
-      nextFormClicked: false,
-      backFormClicked: true,
       count: this.state.count - 1
     });
   }
 
   getData(val) {
-    // this.setState((prevState, props) => ({
-    //   createInvoiceData: { ...prevState.createInvoiceData, ...val }
-    // }));
-
-    this.setState({
-      createInvoiceData: val
-    })
+    this.setState((prevState, props) => ({
+      createInvoiceData: { ...prevState.createInvoiceData, ...val }
+    }));
   }
 
   GeneralLedgerComponent(count) {
@@ -67,13 +57,15 @@ class GeneralLedger extends Component {
         return <CreateInvoiceSecond sendData={this.getData} />
 
       case 2:
-        return <CreateInvoiceThird sendData={this.getData} />
+        return <CreateInvoiceThird finalInvoiceData={this.state} />
     }
   }
 
 
 
   render() {
+    console.log("***", this.state);
+
     return (
       <div className="content">
         <Row>

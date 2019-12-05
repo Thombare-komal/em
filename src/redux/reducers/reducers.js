@@ -12,8 +12,6 @@ function rootReducer(state = initialState, action) {
   if (action.type === CREATE_INVOICE_SUBMIT) {
     state.createInvoiceData.push(action.payload);
   }
-  console.log("STate", state);
-
   return state;
 }
 

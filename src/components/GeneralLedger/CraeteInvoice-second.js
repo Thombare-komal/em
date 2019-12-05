@@ -12,11 +12,7 @@ function mapStateToProps(dispatch) {
 class CreateInvoiceSecond extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "",
-      email: "",
-      phone: ""
-    };
+    this.state = {};
     this.invoiceData = this.invoiceData.bind(this);
   }
 
@@ -33,6 +29,8 @@ class CreateInvoiceSecond extends Component {
     {
       this.props.sendData(this.state);
     }
+    console.log("this.state 2", this.props);
+
     return (
       <div>
         <Form>

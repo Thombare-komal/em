@@ -428,3 +428,11 @@ label {
 .h-center {
   text-align: center;
 }
+
+.sub-section-invoice{
+  margin-top: 5%;
+}
+
+.invoice-details{
+  color: rgb(143, 153, 167)
+}
