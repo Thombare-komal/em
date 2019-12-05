@@ -20,7 +20,7 @@ class AdminNavbarLinks extends Component {
                 {/* <button onClick={this.logout} >Log out </button>
                  */}
 
-                <i className="glyphicon glyphicon-user"></i>
+                <i className="glyphicon glyphicon-user" onClick={this.logout}></i>
             </div>
         );
     }
