@@ -10,7 +10,7 @@ class CreateInvoiceThird extends Component {
         const { createInvoiceData } = this.props.finalInvoiceData;
         console.log("/*/*/*", this.props)
         return (
-            < div className="content" >
+            < div>
                 <Row>
                     <Col md={4}>
                         <p className="component-header">Create Invoice</p>

@@ -3,6 +3,7 @@ import Dashboard from "./views/Dashboard";
 import GeneralLedger from "./views/GeneralLedger";
 import BusinessNetwork from "./views/BusinessNetwork";
 import Login from "./components/login/Login";
+import TransactionView from "./views/TransactionView";
 
 const dashboardRoutes = [
   {
@@ -31,6 +32,7 @@ const dashboardRoutes = [
     icon: "glyphicon glyphicon-list-alt",
     name: "Transactions",
     path: "/transactions",
+    component: TransactionView,
     layout: "/admin"
   },
   {
