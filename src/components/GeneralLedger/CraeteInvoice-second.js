@@ -12,7 +12,6 @@ function mapStateToProps(dispatch) {
 class CreateInvoiceSecond extends Component {
   constructor(props) {
     super(props);
-    console.log(this.state);
     this.state = {
       name: "",
       email: "",
@@ -20,8 +19,8 @@ class CreateInvoiceSecond extends Component {
     };
     this.invoiceData = this.invoiceData.bind(this);
   }
+
   invoiceData(event) {
-    console.log(event);
     const name = event.target.name;
     const value = event.target.value;
 
@@ -34,7 +33,6 @@ class CreateInvoiceSecond extends Component {
     {
       this.props.sendData(this.state);
     }
-    console.log("this.props", this.props);
     return (
       <div>
         <Form>
