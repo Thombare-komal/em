@@ -74,7 +74,8 @@ class Login extends Component {
                                     <Form.Group controlId="formBasicPassword">
                                         <Form.Control type="password" placeholder="password" value={this.state.password} className="text-center" onChange={this.handleChange} />
                                     </Form.Group>
-                                    <Button variant="primary" block value="Submit" type="submit">Login</Button>
+                                    <Button variant="primary" value="Submit" type="submit">Login</Button>
+                                 
                                 </Form>
                             </Col>
                         </Row>

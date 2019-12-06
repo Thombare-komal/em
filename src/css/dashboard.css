@@ -338,6 +338,15 @@ a:focus {
   padding: 10px;
 }
 
+.create-transaction-form-row {
+  padding: 10px;
+}
+
+.create-transaction-form-row Form.Label {
+  color: red;
+  background-color: #1DC7EA;
+}
+
 .create-invoice-form-row Form.Label {
   color: red;
   background-color: #1DC7EA;
@@ -374,6 +383,9 @@ a:focus {
 
 .create-invoice-div {
   margin-top: 30px;
+}
+.create-transaction-div{
+  margin-top : 30px
 }
 
 label {
@@ -432,7 +444,17 @@ label {
 .sub-section-invoice{
   margin-top: 5%;
 }
+.sub-section-transaction{
+  margin-top: 5%;
+}
 
 .invoice-details{
   color: rgb(143, 153, 167)
+}
+.transaction-details{
+  color: rgb(143, 153, 167)
+}
+.create-transaction-back-button{
+  cursor:pointer;
+  padding: 10px;
 }
