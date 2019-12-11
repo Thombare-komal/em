@@ -1,0 +1,8 @@
+
+{
+  "/transactions/list": "/transactions",
+  "/transactions/get/:id": "/transactions/:id",
+  "/transactions/create": "/transactions",
+  "/transactions/update/:id": "/transactions/:id",
+  "/transactions/delete/:id": "/transactions/:id"
+}

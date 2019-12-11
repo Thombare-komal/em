@@ -4,6 +4,8 @@ import GeneralLedger from "./views/GeneralLedger";
 import BusinessNetwork from "./views/BusinessNetwork";
 import Login from "./components/login/Login";
 import TransactionView from "./views/TransactionView";
+import AllTransaction from "../src/components/Transaction/AllTransaction"
+import TransactionForm from "./components/Transaction/TransactionForm";
 
 const dashboardRoutes = [
   {
@@ -55,5 +57,6 @@ const dashboardRoutes = [
     layout: "/login"
   }
 ];
+
 
 export default dashboardRoutes;

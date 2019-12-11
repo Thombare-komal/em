@@ -8,13 +8,10 @@ class Transaction extends Component {
     }
     render() {
         const { createTransactionData } = this.props.finalTransactionData;
-        console.log("/*/*/*", this.props)
         return (
             < div>
-                        <span className="sub-header">Transaction Info</span>
+                <span className="sub-header">Transaction Info</span>
                 <img className=" d-flex align-items-center justify-content-center" alt="banner" src={banner} />
-
-
                 <div className="sub-section-transaction" >
                     <Row>
                         <Col> <p>Transaction Number</p> </Col>

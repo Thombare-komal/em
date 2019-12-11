@@ -458,3 +458,21 @@ label {
   cursor:pointer;
   padding: 10px;
 }
+
+.create-transaction-add-button{
+  cursor:pointer;
+  padding: 10px;
+}
+
+.table-heder
+{
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #ffff99;
+}
+.table{
+  table-layout: auto;
+  width: 100%;   
+}

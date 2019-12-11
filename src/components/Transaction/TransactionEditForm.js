@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import axios from 'axios';
 import { createTransactionSubmit } from "../../redux/actions/actions";
 
-class TransactionForm extends Component {
+class TransactionEditForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,19 +15,39 @@ class TransactionForm extends Component {
             name: "",
             email: "",
             phone: "",
-            addSuccess : false
+            editSuccess: false
         };
         this.transactionData = this.transactionData.bind(this);
-        this.addData = this.addData.bind(this)
+        this.updateData = this.updateData.bind(this)
+    }
+    async updateData() {
+        axios.put('http://localhost:3001/transactions/' + this.props.transactionEdit.editId, this.state)
+            .then(await this.setState({
+                ...this.state,
+                editSuccess: true
+            }))
+        // this.props.switchTable(this.state.editSuccess);
+    }
+    componentWillMount() {
+        var self = this;
+        axios.get('http://localhost:3001/transactions/' + this.props.transactionEdit.editId)
+            .then(function (response) {
+               self.setState({
+                    id: response.data.id,
+                    transactionAmount: response.data.transactionAmount,
+                    transactionDate: response.data.transactionDate,
+                    name: response.data.name,
+                    email: response.data.email,
+                    phone: response.data.phone,
+                })
+            })
+
+            this.setState({
+                editForm:this.props
+            })
 
     }
-   async addData() {
-        const response = axios.post('http://localhost:3001/transactions', this.state).then(await this.setState({
-        ...this.state,
-        addSuccess:true
-        }))
-        this.props.switchTable(this.state.addSuccess);
-    }
+  
     transactionData(event) {
         const name = event.target.name,
             value = event.target.value;
@@ -35,7 +55,10 @@ class TransactionForm extends Component {
             [name]: value
         });
     }
+
+
     render() {
+        console.log("transaction edit Form", this.props);
         return (
             <div>
                 <Col md={{ offset: 1 }}>
@@ -49,6 +72,7 @@ class TransactionForm extends Component {
                         <Form.Control
                             type="text"
                             name="id"
+                            value={this.state.id}
                             placeholder="Enter Temporary id"
                             onChange={this.transactionData}
                         />
@@ -61,27 +85,27 @@ class TransactionForm extends Component {
                     <Col md={8}>
                         <Form.Control
                             type="text"
+                            value={this.state.transactionAmount}
                             name="transactionAmount"
                             placeholder="Enter Transaction Total Amount"
                             onChange={this.transactionData}
                         />
                     </Col>
                 </Row>
-
                 <Row className="create-transaction-form-row">
                     <Col md={{ offset: 1, span: 3 }}>
                         <Form.Label>Payment Due Date</Form.Label>
                     </Col>
                     <Col md={8}>
                         <Form.Control
-                            type="date"
+                            type="text"
+                            value={this.state.transactionDate}
                             name="transactionDate"
                             placeholder="Select Date"
                             onChange={this.transactionData}
                         />
                     </Col>
                 </Row>
-
                 <Row className="create-transaction-form-row">
                     <Col md={{ offset: 1, span: 3 }}>
                         <Form.Label>Name</Form.Label>
@@ -90,6 +114,7 @@ class TransactionForm extends Component {
                         <Form.Control
                             type="text"
                             name="name"
+                            value={this.state.name}
                             placeholder="Enter Buyer Name"
                             onChange={this.transactionData}
                         />
@@ -103,6 +128,7 @@ class TransactionForm extends Component {
                         <Form.Control
                             type="text"
                             name="email"
+                            value={this.state.email}
                             placeholder="Enter Buyer Email"
                             onChange={this.transactionData}
                         />
@@ -116,14 +142,15 @@ class TransactionForm extends Component {
                         <Form.Control
                             type="number"
                             name="phone"
+                            value={this.state.phone}
                             placeholder="Enter Buyer Mobile No"
                             onChange={this.transactionData}
                         />
                     </Col>
                 </Row>
-                <Button variant="primary" onClick={this.addData}>Submit</Button>
+                <Button variant="primary" onClick={this.updateData}>Update</Button>
             </div>
         );
     }
 }
-export default TransactionForm;
+export default TransactionEditForm;
