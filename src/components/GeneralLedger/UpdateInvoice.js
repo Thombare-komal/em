@@ -15,6 +15,7 @@ class UpdateInovice extends Component {
       email: "",
       phone: ""
     };
+    
     this.invoiceData = this.invoiceData.bind(this);
   
   }
