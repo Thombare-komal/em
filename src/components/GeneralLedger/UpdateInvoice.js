@@ -15,9 +15,7 @@ class UpdateInovice extends Component {
       email: "",
       phone: ""
     };
-    
     this.invoiceData = this.invoiceData.bind(this);
-  
   }
   UNSAFE_componentWillMount() {
     this.props.fetchSingleInvoice(this.props.id);
@@ -37,13 +35,14 @@ class UpdateInovice extends Component {
     this.props.updateInvoice(value);
   }
   render() {
-    this.props.invoice.id = this.state.id;
-    this.props.invoice.invoiceNumber = this.state.invoiceNumber;
-    this.props.invoice.invoiceDate = this.state.invoiceDate;
-    this.props.invoice.invoiceTotalAmount = this.state.invoiceTotalAmount;
-    this.props.invoice.name = this.state.name;
-    this.props.invoice.email = this.state.email;
-    this.props.invoice.phone = this.state.phone;
+   this.state.id =  this.props.invoice.id 
+   this.state.invoiceNumber = this.props.invoice.invoiceNumber;
+   this.state.invoiceDate = this.props.invoice.invoiceDate ;
+   this.state.invoiceTotalAmount = this.props.invoice.invoiceTotalAmount  ;
+   this.state.name = this.props.invoice.name ;
+   this.state.email = this.props.invoice.email  ;
+   this.state.phone = this.props.invoice.phone  ;
+    console.log(this.state)
     return (
       <div>
         {/* <Form onSubmit={()=>this.handleSubmit()}> */}
