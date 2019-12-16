@@ -48,13 +48,15 @@ export const delete_invoice = data => {
 };
 
 export const update_invoice = data => {
+  console.log(data)
   return dispatch => {
-    Axios.put("http://localhost:3003/invoice/" +data)
+    Axios.put("http://localhost:3003/invoice/", data)
       .then(res => {
         dispatch({ type: UPDATE_INVOICE, payload: res.data });
       })
       .then(res => {
-        alert("data updated successfully");
+        // alert("data updated successfully");
+      console.log(res)
       });
   };
 };
