@@ -12,10 +12,10 @@ class UpdateInovice extends Component {
       invoiceTotalAmount: "",
       invoiceDate: "",
       name: "",
-      email: "",
       phone: ""
     };
     this.invoiceData = this.invoiceData.bind(this);
+
   }
   UNSAFE_componentWillMount() {
     this.props.fetchSingleInvoice(this.props.id);
@@ -27,22 +27,21 @@ class UpdateInovice extends Component {
     this.setState({
       [name]: value
     });
-    
-
   }
   handleSubmit() {
+    console.log(this.state)
+    this.props.invoice.id = this.state.id;
+    this.props.invoice.invoiceNumber = this.state.invoiceNumber;
+   this.props.invoice.invoiceDate = this.state.invoiceDate;
+   this.props.invoice.invoiceTotalAmount = this.state.invoiceTotalAmount ;
+   this.props.invoice.name = this.state.name;
+   this.props.invoice.email = this.state.email ;
+   this.props.invoice.phone = this.state.phone ;
     const value = this.state;
-    this.props.updateInvoice(value);
+    console.log(value)
+    this.props.updateInvoice(this.props.invoice);
   }
   render() {
-   this.state.id =  this.props.invoice.id 
-   this.state.invoiceNumber = this.props.invoice.invoiceNumber;
-   this.state.invoiceDate = this.props.invoice.invoiceDate ;
-   this.state.invoiceTotalAmount = this.props.invoice.invoiceTotalAmount  ;
-   this.state.name = this.props.invoice.name ;
-   this.state.email = this.props.invoice.email  ;
-   this.state.phone = this.props.invoice.phone  ;
-    console.log(this.state)
     return (
       <div>
         {/* <Form onSubmit={()=>this.handleSubmit()}> */}
@@ -59,7 +58,7 @@ class UpdateInovice extends Component {
                 <Form.Control
                   type="text"
                   name="id"
-                  value={this.state.id}
+                  defaultValue={this.props.invoice.id}
                   placeholder="Enter Id"
                   onChange={this.invoiceData}
                 />
@@ -73,7 +72,7 @@ class UpdateInovice extends Component {
                 <Form.Control
                   type="text"
                   name="invoiceNumber"
-                  value={this.state.invoiceNumber}
+                  defaultValue={this.props.invoice.invoiceNumber}
                   placeholder="Enter Invoice Number"
                   onChange={this.invoiceData}
                 />
@@ -87,7 +86,7 @@ class UpdateInovice extends Component {
                 <Form.Control
                   type="text"
                   name="invoiceTotalAmount"
-                  value={this.state.invoiceTotalAmount}
+                  defaultValue={this.props.invoice.invoiceTotalAmount}
                   placeholder="Enter Invoice Total Amount"
                   onChange={this.invoiceData}
                 />
@@ -101,7 +100,7 @@ class UpdateInovice extends Component {
                 <Form.Control
                   type="date"
                   name="invoiceDate"
-                  value={this.state.invoiceDate}
+                  defaultValue={this.props.invoice.invoiceDate}
                   placeholder="Select Date"
                   onChange={this.invoiceData}
                 />
@@ -116,7 +115,7 @@ class UpdateInovice extends Component {
                   type="text"
                   name="name"
                   placeholder="Enter Buyer Name"
-                  value={this.state.name}
+                  defaultValue={this.props.invoice.name}
                   onChange={this.invoiceData}
                 />
               </Col>
@@ -129,7 +128,7 @@ class UpdateInovice extends Component {
                 <Form.Control
                   type="text"
                   name="email"
-                  value={this.state.email}
+                  defaultValue={this.props.invoice.email}
                   placeholder="Enter Buyer Email"
                   onChange={this.invoiceData}
                 />
@@ -143,7 +142,7 @@ class UpdateInovice extends Component {
                 <Form.Control
                   type="number"
                   name="phone"
-                  value={this.state.phone}
+                  defaultValue={this.props.invoice.phone}
                   placeholder="Enter Buyer Mobile No"
                   onChange={this.invoiceData}
                 />
