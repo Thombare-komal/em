@@ -1,0 +1,24 @@
+{
+  "invoice": [
+    {
+      "id": 1,
+      "invoiceNumber": 123,
+      "invoiceTotalAmount": 20000,
+      "invoiceDate": "",
+      "name": "komal",
+      "email": "abc@gmail.com",
+      "phone": 8712345678
+      
+    },
+    {
+        "id": 2,
+        "invoiceNumber": 1234,
+        "invoiceTotalAmount": 20450,
+        "invoiceDate": "",
+        "name": "abcd",
+        "email": "abcd@gmail.com",
+        "phone": 8712345678
+        
+      }
+  ]
+}
