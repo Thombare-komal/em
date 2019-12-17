@@ -24,14 +24,9 @@ class CreateInovice extends Component {
       [name]: value
     })
   }
-  handleSubmit(){
-    const value=this.state;
-    this.props.addInvoice(value)
-
-  }
   render() {
     {
-      // this.props.sendData(this.state);
+      this.props.sendData(this.state);
     }
     return (
       <div>
@@ -118,16 +113,10 @@ class CreateInovice extends Component {
               />
             </Col>
           </Row>
-          <button onClick={()=>this.handleSubmit()}>submit</button>
+          {/* <button onClick={()=>this.handleSubmit()}>submit</button> */}
       </div>
     );
   }
 }
 
-
-const mapDispatchToProps = dispatch => {
-  return {
-    addInvoice: (data) => dispatch(add_invoice(data))
-  }
-}
-export default connect(null, mapDispatchToProps)(CreateInovice);
+export default connect()(CreateInovice);

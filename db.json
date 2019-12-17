@@ -4,7 +4,7 @@
       "invoiceNumber": "112345",
       "invoiceTotalAmount": "25000",
       "invoiceDate": "2019-12-13",
-      "name": "jk wheels and co.",
+      "name": "jk wheels and co.& private ",
       "email": "mukesh.patil@appliedcloudcomputing.org",
       "phone": "999999999",
       "id": 2
@@ -17,6 +17,42 @@
       "email": "abc@gmail.com",
       "phone": "8989898989",
       "id": 3
+    },
+    {
+      "invoiceNumber": "567",
+      "invoiceTotalAmount": "50000",
+      "invoiceDate": "2019-12-14",
+      "name": "t.s.kothari",
+      "email": "digheakshay2014@gmail.com",
+      "phone": "1234567890",
+      "id": 4
+    },
+    {
+      "invoiceNumber": "123",
+      "invoiceTotalAmount": "12000",
+      "invoiceDate": "2019-12-21",
+      "name": "kia motors",
+      "email": "mukesh.patil@appliedcloudcomputing.com",
+      "phone": "567890123",
+      "id": 5
+    },
+    {
+      "invoiceNumber": "123",
+      "invoiceTotalAmount": "56789",
+      "invoiceDate": "2019-12-22",
+      "name": "bmw",
+      "email": "digheakshay2014@gmail.com",
+      "phone": "7896543212",
+      "id": 6
+    },
+    {
+      "invoiceNumber": "1234",
+      "invoiceTotalAmount": "30000",
+      "invoiceDate": "2019-12-15",
+      "name": "L&T",
+      "email": "mukesh.patil@appliedcloudcomputing.com",
+      "phone": "8907654323",
+      "id": 7
     }
   ]
 }

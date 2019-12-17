@@ -13,7 +13,6 @@ const fetch_invoice = (dispatch) => {
     dispatch({ type: FETCH_INVOICE, payload: res.data })
   );
 };
-
 export default fetch_invoice;
 
 export const fetch_single_invoice = data => {
@@ -32,9 +31,7 @@ export const add_invoice = data => {
       }
     }).then(res => {
       dispatch({ type: ADD_INVOICE, payload: res.data });
-    }) .then(res => {
-      alert("data added successfully");
-    });
+    })
   };
 };
 

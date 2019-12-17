@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import ComponentName from "../randomFunctions/CoponentName";
 import CreateInvoice from "../components/GeneralLedger/CreateInovice";
-import InvoiceDetail from "../views/InvoiceDetail";
-import CreateInvoiceSecond from "../components/GeneralLedger/CreateInvoiceSecond";
 import AllInvoice from "../components/GeneralLedger/AllInvoice";
-import {connect } from 'react-redux';
+import { connect } from "react-redux";
+import { add_invoice } from "../redux/actions/Actions";
+import ShowInvoice from "../components/GeneralLedger/ShowInvoice";
 
 let arrowRight = (
   <div className="arrowRight arrow">
@@ -18,24 +17,41 @@ let arrowLeft = (
     <i className="glyphicon glyphicon-arrow-left"></i>
   </div>
 );
+let showButton = (
+  <Row>
+    <Col className="text-center">
+      <Button variant="light">
+        Show
+      </Button>
+    </Col>
+  </Row>
+);
 class GeneralLedger extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      nextClicked: ""
     };
     this.nextClick = this.nextClick.bind(this);
     this.backClick = this.backClick.bind(this);
+    this.showClick = this.showClick.bind(this);
     this.getData = this.getData.bind(this);
     this.GeneralLedgerComponent = this.GeneralLedgerComponent.bind(this);
   }
-
   nextClick() {
     this.setState({
       count: this.state.count + 1
     });
+    if (this.state.count === 1) {
+      this.props.addInvoice(this.state.createInvoiceData);
+    }
   }
-
+  showClick(){
+    this.setState({
+      count: 0
+    });
+  }
   backClick() {
     this.setState({
       count: this.state.count - 1
@@ -47,7 +63,6 @@ class GeneralLedger extends Component {
       createInvoiceData: { ...prevState.createInvoiceData, ...val }
     }));
   }
-
   GeneralLedgerComponent(count) {
     switch (count) {
       case 0:
@@ -57,7 +72,7 @@ class GeneralLedger extends Component {
         return <CreateInvoice sendData={this.getData} />;
 
       case 2:
-        return <CreateInvoiceSecond finalInvoiceData={this.state} />;
+        return <ShowInvoice finalInvoiceData={this.state} />;
     }
   }
   render() {
@@ -81,6 +96,12 @@ class GeneralLedger extends Component {
                     {arrowRight}
                   </div>
                 ) : null}
+
+                {this.state.count === 2 ? (
+                  <div onClick={this.showClick} title="Next" disabled>
+                    {showButton}
+                  </div>
+                ) : null}
               </Col>
             </div>
           </Col>
@@ -90,5 +111,9 @@ class GeneralLedger extends Component {
   }
 }
 
-
-export default connect()(GeneralLedger);
+const mapDispatchToProps = dispatch => {
+  return {
+    addInvoice: data => dispatch(add_invoice(data))
+  };
+};
+export default connect(null, mapDispatchToProps)(GeneralLedger);

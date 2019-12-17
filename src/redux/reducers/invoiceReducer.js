@@ -9,7 +9,7 @@ const invoiceReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case FETCH_INVOICE:
       return Object.assign({}, state, { invoice: payload });
-      
+
     case FETCH_SINGLE_INVOICE:
       return payload;
 
@@ -21,7 +21,6 @@ const invoiceReducer = (state = {}, { type, payload }) => {
 export const addReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case ADD_INVOICE:
-      // return Object.assign({}, state, {invoice:payload});
       return payload;
     default:
       return state;
@@ -31,7 +30,6 @@ export const addReducer = (state = {}, { type, payload }) => {
 export const deleteReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case DELETE_INVOICE:
-      // return Object.assign({}, state, {invoice:payload});
       return payload;
     default:
       return state;
@@ -40,9 +38,6 @@ export const deleteReducer = (state = {}, { type, payload }) => {
 export const updateReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case UPDATE_INVOICE:
-      if (state.id !== payload.id) {
-        return state;
-      }
       return payload;
     default:
       return state;
