@@ -6,14 +6,14 @@ class AllInvoiceTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      updateId : "",
+      singleData :"",
       updateTable: false
     };
   }
-  async updateRow(id) {
+  async updateRow(singleData) {
     var self = this;
     await self.setState({
-      updateId : id,
+      singleData : singleData,
       updateTable: true
     });
     
@@ -26,7 +26,7 @@ class AllInvoiceTable extends Component {
     return (
       <div>
         {this.state.updateTable === true ? (
-          <UpdateInovice id={this.state.updateId} />
+          <UpdateInovice singleData={this.state.singleData} />
         ) : (
           <table className="table">
             <thead className="thead-dark">
@@ -51,7 +51,7 @@ class AllInvoiceTable extends Component {
                   <td>
                     <i
                       className="fa fa-edit"
-                      onClick={() => this.updateRow(row.id)}
+                      onClick={() => this.updateRow(row)}
                     ></i>
                   </td>
                   <td>

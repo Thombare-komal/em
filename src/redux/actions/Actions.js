@@ -6,18 +6,19 @@ import {
   UPDATE_INVOICE,
   FETCH_SINGLE_INVOICE
 } from "../constants/action-types";
+
+const baseUrl ="http://localhost:3001/invoice/";
 const fetch_invoice = (dispatch) => {
-  Axios.get("http://localhost:3003/invoice/").then(res =>
+  Axios.get(`${baseUrl}`).then(res =>
     dispatch({ type: FETCH_INVOICE, payload: res.data })
   );
-  // .then(res => console.log(res.data[0].transactions))
 };
 
 export default fetch_invoice;
 
 export const fetch_single_invoice = data => {
   return dispatch => {
-    Axios.get("http://localhost:3003/invoice/" +data).then(res =>
+    Axios.get(`${baseUrl}${data}`).then(res =>
       dispatch({ type: FETCH_SINGLE_INVOICE, payload: res.data })
     );
   };
@@ -25,19 +26,21 @@ export const fetch_single_invoice = data => {
 
 export const add_invoice = data => {
   return dispatch => {
-    Axios.post("http://localhost:3003/invoice", data, {
+    Axios.post(`${baseUrl}`, data, {
       headers: {
         "Content-Type": "application/json"
       }
     }).then(res => {
       dispatch({ type: ADD_INVOICE, payload: res.data });
+    }) .then(res => {
+      alert("data added successfully");
     });
   };
 };
 
 export const delete_invoice = data => {
   return dispatch => {
-    Axios.delete("http://localhost:3003/invoice/" +data)
+    Axios.delete("http://localhost:3001/invoice/" +data)
       .then(res => {
         dispatch({ type: DELETE_INVOICE, payload: res.data });
       })
@@ -47,16 +50,14 @@ export const delete_invoice = data => {
   };
 };
 
-export const update_invoice = data => {
-  console.log(data)
+export const update_invoice = (data) => {
   return dispatch => {
-    Axios.put("http://localhost:3003/invoice/", data)
+    Axios.put("http://localhost:3001/invoice/"+data.id, data,{headers:{'Content-Type': 'application/json; charset=utf-8'}})
       .then(res => {
-        dispatch({ type: UPDATE_INVOICE, payload: res.data });
+        dispatch({ type: UPDATE_INVOICE, payload:res.data });
       })
       .then(res => {
-        // alert("data updated successfully");
-      console.log(res)
+        alert("data updated successfully");
       });
   };
 };

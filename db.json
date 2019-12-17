@@ -1,31 +1,22 @@
 {
   "invoice": [
     {
-      "id": 1,
-      "invoiceNumber": 123,
-      "invoiceTotalAmount": 20000,
-      "invoiceDate": "",
-      "name": "komal",
+      "invoiceNumber": "112345",
+      "invoiceTotalAmount": "25000",
+      "invoiceDate": "2019-12-13",
+      "name": "jk wheels and co.",
+      "email": "mukesh.patil@appliedcloudcomputing.org",
+      "phone": "999999999",
+      "id": 2
+    },
+    {
+      "invoiceNumber": "5678",
+      "invoiceTotalAmount": "12340",
+      "invoiceDate": "2019-12-15",
+      "name": "tata motors",
       "email": "abc@gmail.com",
-      "phone": 8712345678
-    },
-    {
-      "id": 2,
-      "invoiceNumber": 1234,
-      "invoiceTotalAmount": 20450,
-      "invoiceDate": "",
-      "name": "abcd",
-      "email": "abcd@gmail.com",
-      "phone": 8712345678
-    },
-    {
-      "id": "3",
-      "invoiceNumber": "11",
-      "invoiceTotalAmount": "12000",
-      "invoiceDate": "2019-12-01",
-      "name": "sam",
-      "email": "mukesh.patil@appliedcloudcomputing.com",
-      "phone": "1234567890"
+      "phone": "8989898989",
+      "id": 3
     }
   ]
 }
