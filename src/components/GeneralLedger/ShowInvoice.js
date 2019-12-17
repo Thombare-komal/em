@@ -8,8 +8,9 @@ class ShowInvoice extends Component {
         this.state = {}
     }
     render() {
+        console.log(this.props.finalInvoiceData)
         const { createInvoiceData } = this.props.finalInvoiceData;
-        console.log("/*/*/*", this.props)
+        console.log("/*/*/*", this.props.finalInvoiceData)
         return (
             <div>
                 <p className="sub-header">Your Invoice has been sent</p>

@@ -1,33 +1,44 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {delete_invoice } from "../../redux/actions/Actions";
+import { delete_invoice } from "../../redux/actions/Actions";
 import UpdateInovice from "./UpdateInvoice";
+import ShowInvoice from "./ShowInvoice";
 class AllInvoiceTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      singleData :"",
-      updateTable: false
+      singleData: "",
+      updateTable: false,
+      count: 0
     };
   }
   async updateRow(singleData) {
     var self = this;
     await self.setState({
-      singleData : singleData,
-      updateTable: true
+      singleData: singleData,
+      updateTable: true,
+      count: 0
     });
-    
   }
   deleteRow(id) {
     this.props.deleteInvoice(id);
   }
+  // async rowClicked(row) {
+  //   var self = this;
+  //   await self.setState({
+  //     singleData: row,
+  //     updateTable: false,
+  //     count: 1
+  //   });
+  //   console.log(this.state);
+  // }
   render() {
-    const { invoice } = this.props;
+    const { singleData } = this.state;
     return (
       <div>
         {this.state.updateTable === true ? (
           <UpdateInovice singleData={this.state.singleData} />
-        ) : (
+        ):(
           <table className="table">
             <thead className="thead-dark">
               <tr>
@@ -42,7 +53,9 @@ class AllInvoiceTable extends Component {
             </thead>
             <tbody>
               {this.props.invoice.map((row, action) => (
-                <tr key={row.id} onClick={this.rowClicked}>
+                <tr key={row.id} 
+                // onClick={() => this.rowClicked(row)}
+                >
                   <td>{row.name}</td>
                   <td>{row.invoiceTotalAmount}</td>
                   <td>{row.email}</td>
@@ -64,7 +77,8 @@ class AllInvoiceTable extends Component {
               ))}
             </tbody>
           </table>
-        )}
+        )
+      }
       </div>
     );
   }
